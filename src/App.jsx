@@ -24,7 +24,7 @@ function App({ dogs }) {
   
   return (
     <div className="App">
-      <Nav />
+      <Nav dogs={dogs}/>
       <Routes>
         <Route path='/dogs' element={<DogList dogs={dogs} />}/>
         <Route 

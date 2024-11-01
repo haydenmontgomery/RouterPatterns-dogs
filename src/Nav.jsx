@@ -1,22 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({dogs}) => {
   
   return (
     <nav className="NavBar">
-      <Link to="/dogs/duke" >
-        Duke
+      {dogs.map(({ name, age, src, facts }, idx) => (
+        <button key={idx}><Link to={`/dogs/${name}`} >
+        {String(name).charAt(0).toUpperCase() + String(name).slice(1)}
       </Link>
-      <Link to="/dogs/perry" >
-        Perry
-      </Link>
-      <Link to="/dogs/tubby" >
-        Tubby
-      </Link>
-      <Link to="/dogs/whiskey" >
-        Whiskey
-      </Link>
+      </button>
+
+      ))}
     </nav>
   );
 }
